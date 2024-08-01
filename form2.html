@@ -6,31 +6,8 @@
     <title>Admission Form</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container">
-        <h1>Admission Form</h1>
-        <form action="/submit" method="post">
-            <div class="form-group">
-                <label for="name">shreya Tibshetty</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">shreyatibshetty@gmail.com</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">9611736660</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="address">svp nagar jail colony ,bidar,karnatak</label>
-                <textarea id="address" name="address" rows="4" required></textarea>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</body>
-</html>
+<style>
+
 body {
     font-family: Arial, sans-serif;
     background-color: #007BFF;
@@ -42,7 +19,7 @@ body {
 }
 
 .container {
-    background: lavendar;
+    background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -75,12 +52,12 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-    border-color: #007BFF;
+    border-color: #bcc3cb;
     outline: none;
 }
 
 button {
-    background-color: #007BFF;
+    background-color: #c9cfd6;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -93,3 +70,41 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Admission Form</h1>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="address">Gender</label>
+                <label>Gender:</label><br>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label><br><br>
+        </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
