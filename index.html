@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Celestial Café</title>
+    <style>
+        
+    body {
+            line-height: 1.6;
+            padding-top: 60px; 
+        }   
+
+    nav {
+        position: fixed;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        z-index: 1000; 
+        background: rgba(0, 0, 0, 0.6); 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        color: #fff;
+    }
+
+    header {
+        position: relative;
+        color: #fff;
+        background: url('https://c1.wallpaperflare.com/preview/713/465/175/coffee-latte-restaurant-cookie.jpg') no-repeat center center/cover;
+        height: 100vh;
+        text-align: center;
+        padding-top: 60px; 
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 0 1rem;
+    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        header {
+            position: relative;
+            color: #fff;
+            background: url('https://c1.wallpaperflare.com/preview/713/465/175/coffee-latte-restaurant-cookie.jpg') no-repeat center center/cover;
+            height: 100vh;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        nav h1 {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 0.3rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 0 1rem;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            color: #fff;
+            background: #ff6f61;
+            text-decoration: none;
+            border-radius: 0.3rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ff4d3a;
+        }
+
+        .menu, .about, .gallery, .reviews, .contact {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .menu-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 0.3rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 30%;
+            margin: 1rem;
+            padding: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 0.3rem;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery-grid img {
+            width: 30%;
+            margin: 0.5rem;
+            border-radius: 0.3rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        .reviews .review {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 0.3rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviews .review cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            color: #333;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .contact label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 0.3rem;
+        }
+
+        .contact button {
+            background: #ff6f61;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 0.3rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact button:hover {
+            background: #ff4d3a;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .social-links a {
+            margin: 0 0.5rem;
+            display: inline-block;
+        }
+
+        .social-links img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: rgba(0, 0, 0, 0.9);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu-item {
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+
+            .gallery-grid img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>The Celestial Café</h1>
+                <button class="menu-toggle">&#9776;</button>
+                <ul id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to The Celestial Café</h2>
+                <p>Enjoy delightful meals and a cozy atmosphere.</p>
+                <a href="#menu" class="btn">Explore Our Menu</a>
+            </div>
+        </section>
+    </header>
+
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.BYBk_3gd5g0lwqUoYzwAOAHaE7&pid=Api&P=0&h=180" alt="Dish 1">
+                    <h3>Classic Croissant</h3>
+                    <p>Flaky and buttery, the perfect pastry for any time of day.</p>
+                    <span>$9.99</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://wallpaperaccess.com/full/2270611.jpg" alt="Dish 2">
+                    <h3>Café Latte</h3>
+                    <p>A rich and creamy espresso-based coffee drink.</p>
+                    <span>$5.99</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://wallpaperaccess.com/full/8698607.jpg" alt="Dish 3">
+                    <h3>Tempura</h3>
+                    <p>Tempura consists of seafood and vegetables encased in a light, crispy.</p>
+                    <span>$3.99</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://photos.smugmug.com/Kyoto/Kyoto-Restaurants/i-xPq9Gxq/0/cb50bf50/XL/shutterstock_1460683958-XL.jpg" alt="Dish 4">
+                    <h3>Okonomiyaki</h3>
+                    <p>Okonomiyaki is a savory pancake packed with ingredients like cabbage and meat, topped with a tangy sauce and mayonnaise.</p>
+                    <span>$65.99</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://sadieskitchen.ie/wp-content/uploads/2018/06/Miso-Soup-min.jpg" alt="Dish 5">
+                    <h3>Miso Soup</h3>
+                    <p> Miso soup is a traditional Japanese soup made from fermented miso paste and dashi broth, often with tofu and seaweed. </p>
+                    <span>$78.99</span>
+                </div>
+                <!-- Add more menu items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>ABOUT US</h2>
+            <p>At The Celestial Café, we pride ourselves on providing a warm and inviting atmosphere with delicious, freshly prepared food. Join us for a memorable dining experience.</p>
+            <p>Welcome to The Celestial Café, where tradition meets contemporary cuisine in a harmonious blend of flavors and ambiance. Nestled in the heart of the city, our establishment is dedicated to offering a unique dining experience that delights all your senses.</p>
+            <h3>OUR STORY</h3>
+            <p>Founded in 2024, The Celestial Café & Restaurant began with a vision to create a space where people could come together to enjoy exquisite food and share memorable moments. Our founders, passionate about both food and community, aimed to build a haven that reflects the rich tapestry of global cuisines while celebrating local ingredients.</p>
+            <h3>OUR MISSION</h3>
+            <p>Our mission is to provide a warm and welcoming environment where every guest feels at home. We strive to offer exceptional food crafted with the finest ingredients, accompanied by outstanding service. At Nusa Café & Restaurant, we believe that dining is not just about eating; it’s about experiencing joy and connection.</p>
+            <h3>OUR VALUES</h3>
+            <ul>
+                <li><strong>Quality:</strong> We use only the freshest, high-quality ingredients to ensure that every dish meets our high standards.</li>
+                <li><strong>Innovation:</strong> We constantly seek to innovate and introduce new flavors and dishes to keep our menu exciting and fresh.</li>
+                <li><strong>Community:</strong> We are committed to supporting local farmers and suppliers, and we actively engage with our community through various events and initiatives.</li>
+                <li><strong>Sustainability:</strong> We take steps to minimize our environmental impact by using sustainable practices and eco-friendly materials.</li>
+            </ul>
+            <h3>WHAT SETS US APART</h3>
+            <p>At The Celestial Café, we blend traditional recipes with modern techniques to create a menu that is both unique and familiar. Our talented chefs are dedicated to crafting dishes that not only taste exceptional but are also beautifully presented. From our cozy and stylish dining area to our attentive staff, every detail is designed to provide an exceptional dining experience.</p>
+            <h3>JOIN US</h3>
+            <p>Whether you’re here for a casual brunch, a romantic dinner, or a special celebration, we invite you to discover the charm and culinary delights of Nusa Café & Restaurant. We look forward to welcoming you and making your dining experience truly unforgettable.</p>
+        </div>
+    </section>
+    
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="https://alexferraz.com.br/wp-content/uploads/2024/03/Waffle-Veggie-Nusa-Cafe-Credito-Divulgacao.jpg" alt="Gallery Image 1">
+                <img src="https://static.thehoneycombers.com/wp-content/uploads/sites/4/2023/02/pison-best-cafes-in-ubud-bali-indonesia.jpg" alt="Gallery Image 2">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.FFQ1KLiqocPrHJb0U0DLGgHaE8&pid=Api&P=0&h=180" alt="Gallery Image 3">
+                <!-- Add more gallery images as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>What Our Guests Say</h2>
+            <div class="review">
+                <p>"The Celestial Café is the best I've ever had. The atmosphere is cozy and welcoming!"</p>
+                <cite>- Madhu Jaiswal </cite>
+            </div>
+            <div class="review">
+                <p>"A great place for brunch. The Classic Croissant is a must-try."</p>
+                <cite>- Sneha Naik </cite>
+            </div>
+            <!-- Add more reviews as needed -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 The Celestial Café. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><img src="https://vectorified.com/images/facebook-link-icon-10.jpg" alt="Facebook"></a>
+                <a href="#"><img src="https://tse1.mm.bing.net/th?id=OIP._Ujco6PWCgH_UJfPXtPafAHaFj&pid=Api&P=0&h=180" alt="Twitter"></a>
+                <a href="#"><img src="https://i.ytimg.com/vi/2Wv3e1lnjuU/maxresdefault.jpg" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('#nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
